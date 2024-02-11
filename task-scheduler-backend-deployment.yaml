@@ -16,11 +16,13 @@ spec:
     spec:
       containers:
         - name: task-scheduler-backend
-          image: task-scheduler-backend
-          imagePullPolicy: Never
+          image: chanakan5591/task-scheduler-backend
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
               name: ts-pb-svc
+      imagePullSecrets:
+        - name: regcred
 ---
 apiVersion: v1
 kind: Service
